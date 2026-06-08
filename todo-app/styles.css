@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #999999;
+    --input-border: #e0e0e0;
+    --input-focus: #667eea;
+    --btn-primary: #667eea;
+    --btn-primary-hover: #5568d3;
+    --item-bg: #f9f9f9;
+    --item-hover-bg: #f0f0f0;
+    --item-border: #667eea;
+    --container-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --bg-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-secondary: #999999;
+    --input-border: #444444;
+    --input-focus: #7c88ff;
+    --btn-primary: #7c88ff;
+    --btn-primary-hover: #6b78ff;
+    --item-bg: #2a2a2a;
+    --item-hover-bg: #333333;
+    --item-border: #7c88ff;
+    --container-shadow: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.container {
+    background: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px var(--container-shadow);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 28px;
+    flex: 1;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.theme-toggle:hover {
+    background: var(--input-focus);
+    border-color: var(--input-focus);
+    transform: scale(1.05);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+#todoInput:focus {
+    outline: none;
+    border-color: var(--input-focus);
+}
+
+#addBtn {
+    padding: 12px 24px;
+    background: var(--btn-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#addBtn:hover {
+    background: var(--btn-primary-hover);
+}
+
+#addBtn:active {
+    transform: scale(0.98);
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: var(--item-bg);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--item-border);
+}
+
+.todo-item:hover {
+    background: var(--item-hover-bg);
+    box-shadow: 0 2px 8px var(--container-shadow);
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.todo-text {
+    flex: 1;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    word-break: break-word;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    min-width: 70px;
+}
+
+.delete-btn:hover {
+    background: #ff5252;
+}
+
+.delete-btn:active {
+    transform: scale(0.95);
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
